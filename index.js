@@ -2,9 +2,14 @@ const express=require('express');
 const app = express ();
 
 //ruta 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+let librosRouter=require("./router/librosRouter");
 
 
 
+app.use("/api",librosRouter);
 
 
     //servidor ppuerto 
